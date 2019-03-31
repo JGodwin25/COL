@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="search-agent.css">
+<link rel="stylesheet" href="font-awesome.min.css">
+</head>
+<body>
+<div class="header"><h1 align="center">Anonymous</h1><p class="account"><h2 class="acc-link">My Account <i class="fa fa-caret-down"></i></h2></p></div>
+<div class="jktCD-main jktCD-style-one" style="display: block;">
+      <ul>
+        <li class="item"><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+        <li class="item"><a href="dashboard.html"><i class="fa fa-cog"></i> Dashboard</a></li>
+
+   <li class="item"><a href="search-agent.html"><i class="fa fa-user-secret"></i> Search Agent</a></li>
+
+       <li class="item"><a href="cs-tool.html"><i class="fa fa-wrench"></i> CS Tool</a></li>
+        
+        
+        <li class="pemisah"></li>
+        <li class="item"><a href="signout.html"><i class="fa fa-power-off"></i> Sign Out</a></li>
+      </ul>
+    </div>
+<div class=row>
+<div class="col-row">
+
+<h1 style="margin-top:10px;">Search for agent near you </h1>
+<input class="search" type="text" placeholder="search by region"/>
+
+</div>
+
+</div>
+<div class="row results">
+<h3>Results</h3>
+
+<div class="agents">
+<div class="flag">
+<img src="us.png" height="100">
+</div>
+<div class="agent-data">
+<h3 style="display:inline;"><i class="fa fa-user"></i>George</h3>
+<h4 style="display:inline"><i class="fa fa-level-up"></i>Experience:10yrs</h4>
+<h3><i class="fa fa-map-marker"></i>Location:San Antonio, TX, United States</h3>
+<h4 Style="display:inline;"><i class="fa fa-phone-square"></i>Mobile:987876546</h4><h4  style="display:inline;"><i class="fa fa-envelope-o"></i>E-mail:st.george@anonymous.com</h4>
+
+</div>
+</div>
+
+<div class="agents">
+<div class="flag">
+<img src="us.png" height="100">
+</div>
+<div class="agent-data">
+<h3 style="display:inline;"><i class="fa fa-user"></i>Theresa</h3>
+<h4 style="display:inline"><i class="fa fa-level-up"></i>Experience:12yrs</h4>
+<h3><i class="fa fa-map-marker"></i>Location:El Paso, TX, United States</h3>
+<h4 Style="display:inline;"><i class="fa fa-phone-square"></i>Mobile:7867671243</h4><h4  style="display:inline;"><i class="fa fa-envelope-o"></i>E-mail:st.theresa@anonymous.com</h4>
+
+</div>
+</div>
+
+<div class="agents">
+<div class="flag">
+<img src="us.png" height="100">
+</div>
+<div class="agent-data">
+<h3 style="display:inline;"><i class="fa fa-user"></i>Jude</h3>
+<h4 style="display:inline"><i class="fa fa-level-up"></i>Experience:20yrs</h4>
+<h3><i class="fa fa-map-marker"></i>Location:Boise, ID, United States</h3>
+<h4 Style="display:inline;"><i class="fa fa-phone-square"></i>Mobile:1256238765</h4><h4  style="display:inline;"><i class="fa fa-envelope-o"></i>E-mail:st.jude@anonymous.com</h4>
+
+</div>
+</div>
+
+</div>
+<script src="scripts/jquery-1.12.4.js"></script>
+<script>
+$('.jktCD-main').hide();
+$('.acc-link').click(function(){
+$('.jktCD-main').toggle();
+});
+$('.row').click(function(){
+$('.jktCD-main').hide();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="cs-tool.css">
+<link rel="stylesheet" href="font-awesome.min.css">
+</head>
+<body>
+
+<div class="header"><h1 align="center">Anonymous</h1><p class="account"><h2 class="acc-link">My Account <i class="fa fa-caret-down"></i></h2></p></div>
+
+<div class="jktCD-main jktCD-style-one" style="display: block;">
+      <ul>
+        <li class="item"><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+        <li class="item"><a href="dashboard.html"><i class="fa fa-cog"></i> Dashboard</a></li>
+
+   <li class="item"><a href="search-agent.html"><i class="fa fa-user-secret"></i> Search Agent</a></li>
+
+       <li class="item"><a href="cs-tool.html"><i class="fa fa-wrench"></i> CS Tool</a></li>
+        
+        
+        <li class="pemisah"></li>
+        <li class="item"><a href="signout.html"><i class="fa fa-power-off"></i> Sign Out</a></li>
+      </ul>
+    </div>
+
+
+<div class="row">
+<div class="col1">
+<div class="graph-head"><h3>Income vs Expense</h3></div>
+<div id="graph-body"></div>
+</div>
+<div class="col2">
+<h3 class="col-header">Input</h3>
+<div class="col-in-w">
+<span style="color:#b2b3b5;font-size:13px;font-weight: 300;">Filter</span>
+<p class="search-holder" style="margin-top:2px;"><input class="search" type="text" placeholder="search region"/></p>
+
+<select class="regions"></select> <br />
+<button class="calc-col hidden">Get COL</button>
+<button class="calc-inc hidden">Calculate Income</button>
+<p class="btn-holder"><button class="calc-exp">Calculate Expenses</button>
+<button class="con-cur">Convert Currency</button></p>
+</div>
+
+</div>
+</div>
+
+<div class="row">
+<div class="sm-income"><div class="ban"><i class="fa fa-user"></i></div><div class="ban-con"><!--<input class="tot-inc" type="text"/>--><h1 class="money tot-inc-s"></h1><p>Income</p></div></div>
+<div class="sm-expense"><div class="ban" style="background: #ff6c60;"><i class="fa fa-shopping-cart"></i></div><div class="ban-con"><!--<input class="tot-exp" type="text"/>--><h1 class="money tot-exp-s"></h1><p>Expense</p></div></div>
+<div class="sm-income"><div class="ban" style="background: #f8d347;"><i class="fa fa-bar-chart-o"></i></div><div class="ban-con"><!--<input class="tot-inc" type="text"/>--><h1 class="money tot-inc-s"></h1><p>Balance</p></div></div>
+</div>
+<div class="row">
+<div class="col3">
+<h3 class="col-header">Income</h3>
+<div class="col-in-w">
+<table>
+<tbody>
+<tr><td>Initial investment</td><td><input class="initial" type="text" /></td><td><!--<input type='range'name="initial" value='13' min='1' max='28' />--></td></tr>
+<tr><td>Monthly savings</td><td><input class="monthly" type="text" /></td><td><!--<input type='range' name="monthly" value='13' min='1' max='28' />--></td></tr>
+<tr><td>Rate of Intrest</td><td>8.50 %</td><td></td></tr></label>
+<tr><td><img src="warning.png" height=35></td><td>You must increase savings by 514.55833</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<div class="col4">
+<span class="icon"></span><h3 class="col-header">Expenses</h3>
+
+<div class="col-in-w">
+<table>
+<tbody>
+<tr><td>Course Duration</td><td><input class="course_duration" type="text" /> in Years</td><td><!--<input type='range' name="course_duration" value='13' min='1' max='28' />--></td></tr>
+<tr><td>Tution Fee</td><td><input class="ug_tution ug_tution_user" type="text" /> / year</td><td><!--<input type='range' name="ug_tution_user" value='13' min='1' max='28' />--></td></tr>
+<tr><td>Rent</td><td><input class="rent rent_user" type="text" /> / day</td><td><!--<input type='range' name="rent" value='13' min='1' max='28' />--></td></tr>
+<tr><td>Restaurant</td><td><input class="restaurant restaurant_user" type="text" /> / day</td><td><!--<input type='range' name="restaurant" value='13' min='1' max='28' />--></td></tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
+
+<script src="../scripts/jquery-1.12.4.js"></script>
+<script src="dataset.js"></script>
+<script>
+$('input[type="range"]').change(function(){
+    //alert($(this).val());
+var nm=$(this).attr("name");
+//alert($('.'+nm).val());
+});
+$('.regions').change(function(){
+$('.calc-col').click();
+});
+var rateOfIntrest=8.5;
+var region_val,col,rent,restaurant,ug_tution,pg_tution,course_duration,currency,totIncome,totExpenses,initialInv,monthlyInv,duration;
+initialInv=10000;
+monthlyInv=2000;
+var a="";
+conversion_rates=JSON.parse(JSON.stringify(conversion_rates));
+var regions=JSON.parse(JSON.stringify(as));
+//console.log(regions);
+$('.search').keyup(function(){
+$('.regions').html("");
+var text=$(this).val();
+//console.log(text);
+
+for(var loop=0;loop<regions.length;loop++){
+var city=(JSON.parse(regions[loop]).city);
+if(city.toLowerCase().indexOf(text.toLowerCase())!=-1){
+$('.regions').append("<option value="+loop+">"+city+"</option>");
+//console.log((JSON.parse(regions[loop]).city));
+}
+}
+
+$('.calc-col').click();
+
+});
+
+$('.calc-col').click(function(){
+
+region_val=$('.regions').val();
+costol=JSON.parse(regions[region_val]).costol;
+rent=JSON.parse(regions[region_val]).rent;
+restaurant=JSON.parse(regions[region_val]).restaurant;
+ug_tution=JSON.parse(regions[region_val]).ug_tution;
+pg_tution=JSON.parse(regions[region_val]).pg_tution;
+course_duration=JSON.parse(regions[region_val]).course_duration;
+currency=JSON.parse(regions[region_val]).currency;
+//initialInv=JSON.parse(regions[region_val]).initial;
+//monthlyInv=JSON.parse(regions[region_val]).monthly;
+$('.costol').val(costol);
+$('.rent').val(rent);
+$('.restaurant').val(restaurant);
+$('.ug_tution').val(ug_tution);
+$('.pg_tution').val(pg_tution);
+$('.course_duration').val(course_duration);
+$('.currency').val(currency);
+$('.initial').val(initialInv);
+$('.monthly').val(monthlyInv);
+$('.calc-inc').click();
+});
+
+$('.calc-inc').click(function(){
+initialInv=$('.initial').val();
+monthlyInv=$('.monthly').val();
+duration=$('.course_duration').val();
+//alert(duration);
+totIncome=Number(initialInv)+Number(((monthlyInv*12)*duration));
+totIncome+=totIncome*(rateOfIntrest/100);
+//alert(totIncome);
+//$('.tot-inc').val(totIncome);
+$('.tot-inc-s').text(totIncome);
+});
+
+$('.calc-exp').click(function(){
+    
+rent=Number($('.rent_user').val())*12*duration;
+restaurant=Number($('.restaurant_user').val())*12*duration;
+ug_tution=($('.ug_tution_user').val());
+//alert(rent+" "+($('.rent_user').val())+" "+restaurant+" "+($('.restaurant_user').val())+" "+ug_tution+" "+($('.ug_tution_user').val()));
+alert(ug_tution+" r="+rent+" res="+restaurant)
+totExpenses=Number(ug_tution)+Number(rent)+Number(restaurant);
+//$('.tot-exp').val(totExpenses);
+$('.tot-exp-s').text(totExpenses);
+});
+
+$('.con-cur').click(function(){
+
+console.log(conversion_rates);
+var currentCur=eval("conversion_rates."+currency);
+console.log(currentCur);
+
+});
+
+</script>
+
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Income', 'Expenses'],
+          ['2004',  10000,      0],
+          ['2005',  20000,      40000],
+          ['2006',  40000,       40000],
+          ['2007',  160000,      250000]
+        ]);
+
+        var options = {
+          title: '',
+          curveType: 'function',
+          legend: { position: 'bottom'}
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('graph-body'));
+
+        chart.draw(data, options);
+      }
+    </script>
+<script src="scripts/jquery-1.12.4.js"></script>
+<script>
+$('.jktCD-main').hide();
+$('.acc-link').click(function(){
+$('.jktCD-main').toggle();
+});
+$('.row').click(function(){
+$('.jktCD-main').hide();
+});
+</script>
+</body>
+</html>

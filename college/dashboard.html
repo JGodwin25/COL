@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="font-awesome.min.css">
+</head>
+<body>
+
+<div class="header"><h1 align="center">Anonymous</h1><p class="account"><h2 class="acc-link">My Account <i class="fa fa-caret-down"></i></h2></p></div>
+
+<div class="jktCD-main jktCD-style-one" style="display: block;">
+      <ul>
+        <li class="item"><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+        <li class="item"><a href="dashboard.html"><i class="fa fa-cog"></i> Dashboard</a></li>
+
+   <li class="item"><a href="search-agent.html"><i class="fa fa-user-secret"></i> Search Agent</a></li>
+
+       <li class="item"><a href="cs-tool.html"><i class="fa fa-wrench"></i> CS Tool</a></li>
+        
+        
+        <li class="pemisah"></li>
+        <li class="item"><a href="signout.html"><i class="fa fa-power-off"></i> Sign Out</a></li>
+      </ul>
+    </div>
+
+
+<div class="row">
+<div class="col1">
+<div class="col-header"><h2 align="center">Policy Bucket</h2>
+
+<div class="policy">
+<div>
+    
+<div id="chart_div" class="chart"></div>
+    <div id="center">
+            <font style="font-weight: bold;font: 18px arial, sans-serif;color:#93d150;">95%</font>
+            <BR>
+             <font style="color:grey;font: 14px arial, sans-serif;">Completed</font></div>
+
+<h4 align="center">College Savings</h4>
+</div>
+</div>
+
+<div class="policy">
+<div id="chart_div2" class="chart"></div>
+    <div id="center">
+            <font style="font-weight: bold;font: 18px arial, sans-serif;color:#4472c5">72%</font>
+            <BR>
+             <font style="color:grey;font: 14px arial, sans-serif;">Completed</font></div>
+<h4 align="center">Orange</h4>
+</div>
+
+
+<div class="policy">
+
+<div id="chart_div3" class="chart"></div>
+    <div id="center">
+            <font style="font-weight: bold;font: 18px arial, sans-serif;color:red;">39%</font>
+            <BR>
+             <font style="color:grey;font: 14px arial, sans-serif;">Completed</font></div>
+<h4 align="center">My Retirement</h4>
+</div>
+
+
+</div>
+
+<div class="policy">
+
+<div id="chart_div4" class="chart"></div>
+    <div id="center" style="padding-left: 7px;">
+            <img src="completed.png" height=50></div>
+<p style="text-align:center;background:#fff;margin:0;padding:0;color:#93d150;top: 173px;    position: absolute;left: 61px;">Claimed</p>
+<h4 align="center">Family Shelter</h4>
+</div>
+
+
+</div>
+
+</div><!-- col1-->
+
+<div class="col2">
+<div class="col-header"><h2 align="center">Nominee(s)</h2></div>
+
+<div class="nominees">
+<div class="nominee">
+<span><i class="fa fa-user icon"></i></span>
+<span class="nom-name"><h4>George</h4></span>
+</div>
+
+<div class="nominee">
+<span><i class="fa fa-user icon"></i></span>
+<span class="nom-name"><h4>Jude</h4></span>
+</div>
+<div class="nominee">
+<span><i class="fa fa-user icon"></i></span>
+<span class="nom-name"><h4>Antony</h4></span>
+</div>
+<div class="nominee">
+<span><i class="fa fa-user icon"></i></span>
+<span class="nom-name"><h4>Theresa</h4></span>
+</div>
+
+</div>
+
+</div><!-- col2-->
+
+</div>
+
+
+
+<div class="row" style="float:left;">
+<h3 style="color:#72809b;padding-left:20px;">Last Payments</h3>
+<div class="col3">
+<table>
+<thead>
+<tr><th>status</th><th>Name</th><th>Policy</th><th>Date</th><th>Price</th></tr>
+</thead>
+<tbody>
+<tr><td><img src="pending.png" height="50px"></td><td>George</td><td>College Savings</td><td>27/3/2019</td><td>500$</td></tr>
+<tr><td><img src="tick.png" height="50px"></td><td>George</td><td>College Savings</td><td>25/1/2019</td><td>500$</td></tr>
+<tr><td><img src="into.png" height="50px"></td><td>George</td><td>College Savings</td><td>25/1/2019</td><td>500$</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="col4">
+<div>
+<img src="bonus.jpg"/>
+
+<div class="col-header"><h1 align="center">5000 pts</h1></div>
+</div>
+
+</div>
+
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="donut.js"></script>
+<script src="scripts/jquery-1.12.4.js"></script>
+<script>
+$('.jktCD-main').hide();
+$('.acc-link').click(function(){
+$('.jktCD-main').toggle();
+});
+$('.row').click(function(){
+$('.jktCD-main').hide();
+});
+</script>
+</body>
+</html>
