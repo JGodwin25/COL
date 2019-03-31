@@ -1,0 +1,54 @@
+<html>
+  <head>
+
+<div class="myinput">
+    <input type="text" name="monthly-savngs">
+</div>
+<div class="coll-expenses">
+<input class="coll-tution" type="text" name="coll-tution">
+<input class="coll-hostel" type="text" name="coll-hostel">
+</div>
+<button class="calculate">Calculate</button>
+
+
+    <script type="text/javascript" src="loader.js"></script>
+    <script type="text/javascript">
+      
+    </script>
+</head>
+<body>
+<div id="curve_chart" style="width: 900px; height: 500px"></div>
+<script src="scripts/jquery-1.12.4.js"></script>
+<script>
+$('.calculate').click(function(){
+var myinput=$('.myinput input').val();
+var colltution=Number( $(".coll-tution").val());  //Number("100")
+var collhostel=Number( $(".coll-hostel").val());
+var totexpenses=(colltution+collhostel)*5;
+
+// Google Chart Code
+google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2014',  0,0],
+          ['2019',  myinput, totexpenses]
+        ]);
+
+        var options = {
+          title: 'College Savings Clculaor',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+//Google Chart End
+});
+</script>
+</body>
+</html>

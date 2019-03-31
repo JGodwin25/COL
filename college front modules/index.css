@@ -1,0 +1,144 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    height:100%;
+    width:100%;
+}
+.header-nav{
+    color:white;
+    position:fixed;
+    min-height:70px;
+    width:100%;
+    box-shadow:0 0 8px #999;
+    transition: all 0.4s;
+    background: -webkit-linear-gradient(left, #21d4fd, #ff2140);
+}
+
+.content-wrapper{
+    padding-top:50px;
+}
+.row-jumbotron{
+    padding-top:70px;
+    padding-left:25px;
+    padding-right:25px;
+    float:left;
+}
+.col1,.col2{
+width:45%;
+float:left;
+}
+.col1{
+    line-height: 1.42857;
+    color:#398bd4;
+    border-right:1px solid #adadad;
+    padding:70px 30px 100px 0;
+}
+.col2{
+    width:350px;
+    padding:70px 90px 70px 100px;
+}
+.login-header{
+    color:#ff2140; 
+}
+.form1{
+    width:100%;
+    text-align:right;
+}
+.form1 div input{
+
+font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #212529;
+
+min-height:50px;
+width:90%;
+border: none;
+outline:none;
+border-bottom:2px solid #adadad;
+}
+.form1 div input[type="submit"]{
+    width:100px;
+    float:right;
+    margin-top:50px;
+    border:none;
+    border-radius:8px;
+    color:white;
+    background-color: #398bd4;
+    font-size:16px;
+}
+
+
+.row-plans{
+    width:100%;
+    float:left;
+    margin-top:40px;
+}
+.col1-plans,.col2-plans{
+    width:50%;
+    float:left;
+}
+.thumbnail-plans{
+    width:75%;
+    margin:auto;
+    box-shadow:0 0 8px #999;
+    border-radius:7px;
+    min-height:250px;
+    margin-bottom:50px;
+    text-align:center;
+}
+
+.thumbnail-plans p{
+    min-height:125px;
+    bottom:0;
+    border-top:1px solid #adadad;
+    background:#6a7dfe;
+    color:white;
+    margin:0;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+.thumbnail-plans .plan-header{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.row-footer{
+    min-height:70px;
+    width:100%;
+    transition: all 0.4s;
+    background: #6a7dfe;
+    float:left;
+    color:white;
+}
+.col1-footer{
+    padding-left:7px;
+    float:left;
+    width:50%;
+}
+.col2-footer{
+    float:left;
+    width:45%;
+}
+
+.sub-header{
+    margin: auto;
+    width:80%;
+    min-height:50px;
+    background: #ff2140;
+    float:left;
+    color: white;
+    padding-left:5px;
+}
+.sub-header-tri{
+    float:left;
+    height: 0;
+    width: 0;
+    border-top: 67px solid #ff2140;
+    border-right: 67px solid transparent;
+}
